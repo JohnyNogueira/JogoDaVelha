@@ -10,7 +10,7 @@ function eventClick(div) {
         "url('https://media1.tenor.com/images/3bc22abcece7e4ed67596760e98c5a4e/tenor.gif')";
     }
   }
-  debugger;
+ debugger;
   var matriz = [
     [
       document.getElementById("quadro1").style.backgroundImage,
@@ -29,7 +29,15 @@ function eventClick(div) {
     ]
   ];
 
-  if (matriz[0][0] == matriz[0][1] && matriz[0][0] == matriz[0][2]) {
+  if((matriz[0][0] == matriz[0][1] && matriz[0][0] == matriz[0][2])||
+    (matriz[1][0] == matriz[1][1] && matriz[1][0] == matriz[1][2]) ||
+    (matriz[2][0] == matriz[2][1] && matriz[2][0] == matriz[2][2]) ||
+    (matriz[0][0] == matriz[1][0] && matriz[0][0] == matriz[2][0]) ||
+    (matriz[0][1] == matriz[1][1] && matriz[0][1] == matriz[2][1]) ||
+    (matriz[0][2] == matriz[1][2] && matriz[0][2] == matriz[2][2]) ||
+    (matriz[0][0] == matriz[1][1] && matriz[0][0] == matriz[2][2]) ||
+    (matriz[0][2] == matriz[1][1] && matriz[0][2] == matriz[2][0])) 
+    {
     alert("teste");
   }
 }
