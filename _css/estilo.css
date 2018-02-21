@@ -15,7 +15,7 @@ div#tictoetac {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   background-color: rgba(226, 227, 235, 0.925);
-  opacity: 0.5;
+  opacity: 0.9;
 }
 div#divGanhador {
   left: 45%;
@@ -30,22 +30,24 @@ div#divGanhador label {
   font-size: 25pt;
   color: green;
 }
+.wrapper {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #606060;
+}
 .quadro {
-  width: 33%;
-  height: 33%;
+  width: 215px;
+  height: 215px;
   box-sizing: border-box;
-  border-top-left-radius: 10px;
-  border-top: 1px solid #606060;
-  border-left: 1px solid #606060;
   float: left;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   background-color: white;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
-.img {
-  top: 50px;
-  left: 10px;
+.quadro:nth-child(odd) {
+  background-color: #eaeaea;
 }
 #bt {
   width: 150px;

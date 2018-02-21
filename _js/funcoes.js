@@ -1,19 +1,18 @@
 var cont = 0;
 var i = 0;
-const MilHouse =
-  'url("https://78.media.tumblr.com/37b05aae4ac14a79f35cb23df1703703/tumblr_oazc5z08MX1tszwcio1_500.gif")';
-const faustao =
-  'url("https://media1.tenor.com/images/3bc22abcece7e4ed67596760e98c5a4e/tenor.gif")';
+const bolinha = 'url("_imagens/b.png")';
+const xis = 'url("_imagens/x.jpg")';
 var ars = [];
 var verificaGanhador = false;
+var jogador1 = prompt("Jogador 1 digite seu nome: ");
+var jogador2 = prompt("Jogador 2 digite seu nome: ");
 function eventClick(div) {
-  debugger;
   if (verificaGanhador) return false;
   if (div.style.backgroundImage == "") {
     i++;
     cont++;
-    if (i % 2 == 0) div.style.backgroundImage = MilHouse;
-    else div.style.backgroundImage = faustao;
+    if (i % 2 == 0) div.style.backgroundImage = bolinha;
+    else div.style.backgroundImage = xis;
   }
   var ct = 0;
   var dvs = document.querySelectorAll(".quadro");
@@ -32,20 +31,20 @@ function eventClick(div) {
   }
   ganhou([ars[0][0], ars[1][1], ars[2][2]]);
   ganhou([ars[0][2], ars[1][1], ars[2][0]]);
-  debugger;
 
-  function ganhou(tetas) {
+  function ganhou(array) {
     if (
-      tetas[0].style.backgroundImage == tetas[1].style.backgroundImage &&
-      tetas[0].style.backgroundImage == tetas[2].style.backgroundImage &&
-      tetas[0].style.backgroundImage != ""
+      array[0].style.backgroundImage == array[1].style.backgroundImage &&
+      array[0].style.backgroundImage == array[2].style.backgroundImage &&
+      array[0].style.backgroundImage != ""
     ) {
       document.getElementById("divGanhador").style.display = "Block";
-      if (tetas[0].style.backgroundImage == faustao) {
-        document.getElementById("NomeVencedor").innerHTML = "Faustão";
+      if (array[0].style.backgroundImage == xis) {
+        document.getElementById("NomeVencedor").innerHTML = jogador1;
+
         i = 1;
       } else {
-        document.getElementById("NomeVencedor").innerHTML = "MilHouse";
+        document.getElementById("NomeVencedor").innerHTML = jogador2;
         i = 0;
       }
 
@@ -57,7 +56,6 @@ function eventClick(div) {
       verificaGanhador = true;
     }
   }
-
   document.getElementById("bt").onclick = function resetaGame() {
     var reload = document.querySelectorAll(".quadro");
     reload.forEach(function limpa(x) {
@@ -66,6 +64,9 @@ function eventClick(div) {
     document.getElementById("NomeVencedor").innerHTML = "";
     cont = 0;
     verificaGanhador = false;
+
+    jogador1 = prompt("Jogador 1 digite seu nome: ");
+    jogador2 = prompt("Jogador 2 digite seu nome: ");
   };
 }
 // var quadro1 = document.getElementById("quadro1").style.backgroundImage;
@@ -84,9 +85,9 @@ function eventClick(div) {
 //   quadro1 == quadro2 &&
 //   quadro1 == quadro3
 // ) {
-//   if (quadro1 == faustao) {
-//     alert("faustao ganhou");
-//   } else alert("MilHouse ganhou");
+//   if (quadro1 == xis) {
+//     alert("xis ganhou");
+//   } else alert("bolinha ganhou");
 //   verificaGanhador = true;
 // } else if (
 //   quadro4 != "" &&
@@ -95,9 +96,9 @@ function eventClick(div) {
 //   quadro4 == quadro5 &&
 //   quadro4 == quadro6
 // ) {
-//   if (quadro4 == faustao) {
-//     alert("faustao ganhou");
-//   } else alert("MilHouse ganhou");
+//   if (quadro4 == xis) {
+//     alert("xis ganhou");
+//   } else alert("bolinha ganhou");
 //   verificaGanhador = true;
 // } else if (
 //   quadro7 != "" &&
@@ -106,9 +107,9 @@ function eventClick(div) {
 //   quadro7 == quadro8 &&
 //   quadro8 == quadro9
 // ) {
-//   if (quadro7 == faustao) {
-//     alert("faustao ganhou");
-//   } else alert("MilHouse ganhou");
+//   if (quadro7 == xis) {
+//     alert("xis ganhou");
+//   } else alert("bolinha ganhou");
 //   verificaGanhador = true;
 // } else if (
 //   quadro1 != "" &&
@@ -117,9 +118,9 @@ function eventClick(div) {
 //   quadro1 == quadro5 &&
 //   quadro5 == quadro9
 // ) {
-//   if (quadro1 == faustao) {
-//     alert("faustao ganhou");
-//   } else alert("MilHouse ganhou");
+//   if (quadro1 == xis) {
+//     alert("xis ganhou");
+//   } else alert("bolinha ganhou");
 //   verificaGanhador = true;
 // } else if (
 //   quadro3 != "" &&
@@ -128,9 +129,9 @@ function eventClick(div) {
 //   quadro3 == quadro5 &&
 //   quadro5 == quadro7
 // ) {
-//   if (quadro3 == faustao) {
-//     alert("faustao ganhou");
-//   } else alert("MilHouse ganhou");
+//   if (quadro3 == xis) {
+//     alert("xis ganhou");
+//   } else alert("bolinha ganhou");
 //   verificaGanhador = true;
 // } else if (
 //   quadro1 != "" &&
@@ -139,9 +140,9 @@ function eventClick(div) {
 //   quadro1 == quadro4 &&
 //   quadro4 == quadro7
 // ) {
-//   if (quadro1 == faustao) {
-//     alert("faustao ganhou");
-//   } else alert("MilHouse ganhou");
+//   if (quadro1 == xis) {
+//     alert("xis ganhou");
+//   } else alert("bolinha ganhou");
 //   verificaGanhador = true;
 // } else if (
 //   quadro2 != "" &&
@@ -150,9 +151,9 @@ function eventClick(div) {
 //   quadro2 == quadro5 &&
 //   quadro5 == quadro8
 // ) {
-//   if (quadro2 == faustao) {
-//     alert("faustao ganhou");
-//   } else alert("MilHouse ganhou");
+//   if (quadro2 == xis) {
+//     alert("xis ganhou");
+//   } else alert("bolinha ganhou");
 //   verificaGanhador = true;
 // } else if (
 //   quadro3 != "" &&
@@ -161,9 +162,9 @@ function eventClick(div) {
 //   quadro3 == quadro6 &&
 //   quadro6 == quadro9
 // ) {
-//   if (quadro3 == faustao) {
-//     alert("faustao ganhou");
-//   } else alert("MilHouse ganhou");
+//   if (quadro3 == xis) {
+//     alert("xis ganhou");
+//   } else alert("bolinha ganhou");
 //   verificaGanhador = true;
 // }
 // close if verificaGanhador
